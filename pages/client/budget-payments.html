@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payments — Selaras Wedding Planner</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/client.css">
+</head>
+<body>
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+      <circle cx="60" cy="60" r="42" fill="none" stroke="#5C6B54" stroke-width="1.4"/>
+      <circle cx="60" cy="60" r="37.5" fill="none" stroke="#B08D4F" stroke-width="1"/>
+      <g fill="none" stroke="#5C6B54" stroke-width="1.6" stroke-linecap="round">
+        <path d="M26,72 C19,64 19,50 26,40"/>
+        <path d="M94,72 C101,64 101,50 94,40"/>
+      </g>
+      <text x="60" y="72" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-weight="600" font-size="38" fill="#3E4A38">S</text>
+    </svg>
+    <span>Selaras Wedding</span>
+  </div>
+  <a href="wo-clients.html" class="d-flex align-items-center gap-2 px-3 py-2" style="font-size:.78rem; color:#8a8477; text-decoration:none; border-bottom:1px solid rgba(0,0,0,.06); background:#FAF8F3;">
+    <i class="bi bi-arrow-left"></i> Kembali ke Daftar Klien
+  </a>
+  <div class="sidebar-nav">
+    <a class="nav-link single active" href="/dashboard.html">
+      <i class="bi bi-house menu-icon"></i> Overview
+    </a>
+    <div class="nav-group-title">Perencanaan</div>
+    <a class="nav-link parent" data-bs-toggle="collapse" href="#menu-wedding" aria-expanded="false">
+      <i class="bi bi-gem menu-icon"></i> Wedding <i class="bi bi-chevron-down chevron"></i>
+    </a>
+    <div class="collapse submenu" id="menu-wedding">
+      <a class="nav-link" href="/pages/client/wedding-informasi.html">Informasi Wedding</a>
+      <a class="nav-link" href="/pages/client/wedding-timeline.html">Timeline</a>
+      <a class="nav-link" href="/pages/client/wedding-rundown.html">Rundown Acara</a>
+      <a class="nav-link" href="/pages/client/wedding-venue.html">Venue</a>
+      <a class="nav-link" href="/pages/client/wedding-theme.html">Theme &amp; Decoration</a>
+    </div>
+    <a class="nav-link parent" data-bs-toggle="collapse" href="#menu-budget" aria-expanded="false">
+      <i class="bi bi-wallet2 menu-icon"></i> Budget <i class="bi bi-chevron-down chevron"></i>
+    </a>
+    <div class="collapse submenu" id="menu-budget">
+      <a class="nav-link" href="/pages/client/budget-planner.html">Budget Planner</a>
+      <a class="nav-link" href="/pages/client/budget-categories.html">Categories</a>
+      <a class="nav-link" href="/pages/client/budget-expenses.html">Expenses</a>
+      <a class="nav-link" href="/pages/client/budget-payments.html">Payments</a>
+      <a class="nav-link" href="/pages/client/budget-report.html">Financial Report</a>
+    </div>
+    <a class="nav-link parent" data-bs-toggle="collapse" href="#menu-guests" aria-expanded="false">
+      <i class="bi bi-people menu-icon"></i> Guests <i class="bi bi-chevron-down chevron"></i>
+    </a>
+    <div class="collapse submenu" id="menu-guests">
+      <a class="nav-link" href="/pages/client/guests-list.html">Guest List</a>
+      <a class="nav-link" href="/pages/client/guests-groups.html">Guest Groups</a>
+      <a class="nav-link" href="/pages/client/guests-rsvp.html">RSVP</a>
+      <a class="nav-link" href="/pages/client/guests-seating.html">Seating Plan</a>
+      <a class="nav-link" href="/pages/client/guests-checkin.html">QR Check-in</a>
+    </div>
+    <a class="nav-link parent" data-bs-toggle="collapse" href="#menu-vendors" aria-expanded="false">
+      <i class="bi bi-building menu-icon"></i> Vendors <i class="bi bi-chevron-down chevron"></i>
+    </a>
+    <div class="collapse submenu" id="menu-vendors">
+      <a class="nav-link" href="/pages/client/vendors-list.html">Vendor List</a>
+      <a class="nav-link" href="/pages/client/vendors-booking.html">Vendor Booking</a>
+      <a class="nav-link" href="/pages/client/vendors-payments.html">Payments</a>
+      <a class="nav-link" href="/pages/client/vendors-contracts.html">Contracts</a>
+      <a class="nav-link" href="/pages/client/vendors-reviews.html">Reviews</a>
+    </div>
+    <a class="nav-link parent" data-bs-toggle="collapse" href="#menu-planning" aria-expanded="false">
+      <i class="bi bi-check2-square menu-icon"></i> Planning <i class="bi bi-chevron-down chevron"></i>
+    </a>
+    <div class="collapse submenu" id="menu-planning">
+      <a class="nav-link" href="/pages/client/planning-checklist.html">Checklist</a>
+      <a class="nav-link" href="/pages/client/planning-tasks.html">Tasks</a>
+      <a class="nav-link" href="/pages/client/planning-calendar.html">Calendar</a>
+      <a class="nav-link" href="/pages/client/planning-notes.html">Notes</a>
+    </div>
+    <div class="nav-group-title">Arsip &amp; Media</div>
+    <a class="nav-link parent" data-bs-toggle="collapse" href="#menu-documents" aria-expanded="false">
+      <i class="bi bi-folder2-open menu-icon"></i> Documents <i class="bi bi-chevron-down chevron"></i>
+    </a>
+    <div class="collapse submenu" id="menu-documents">
+      <a class="nav-link" href="/pages/client/documents-contracts.html">Contracts</a>
+      <a class="nav-link" href="/pages/client/documents-invoices.html">Invoices</a>
+      <a class="nav-link" href="/pages/client/documents-proof.html">Payment Proof</a>
+      <a class="nav-link" href="/pages/client/documents-other.html">Other Files</a>
+    </div>
+    <a class="nav-link parent" data-bs-toggle="collapse" href="#menu-gallery" aria-expanded="false">
+      <i class="bi bi-image menu-icon"></i> Gallery <i class="bi bi-chevron-down chevron"></i>
+    </a>
+    <div class="collapse submenu" id="menu-gallery">
+      <a class="nav-link" href="/pages/client/gallery-photos.html">Photos</a>
+      <a class="nav-link" href="/pages/client/gallery-videos.html">Videos</a>
+      <a class="nav-link" href="/pages/client/gallery-albums.html">Albums</a>
+    </div>
+    <a class="nav-link parent" data-bs-toggle="collapse" href="#menu-reports" aria-expanded="false">
+      <i class="bi bi-bar-chart menu-icon"></i> Reports <i class="bi bi-chevron-down chevron"></i>
+    </a>
+    <div class="collapse submenu" id="menu-reports">
+      <a class="nav-link" href="/pages/client/reports-budget.html">Budget Report</a>
+      <a class="nav-link" href="/pages/client/reports-guest.html">Guest Report</a>
+      <a class="nav-link" href="/pages/client/reports-vendor.html">Vendor Report</a>
+      <a class="nav-link" href="/pages/client/reports-summary.html">Wedding Summary</a>
+    </div>
+    <div class="nav-group-title">Sistem</div>
+    <a class="nav-link parent" data-bs-toggle="collapse" href="#menu-settings" aria-expanded="false">
+      <i class="bi bi-gear menu-icon"></i> Settings <i class="bi bi-chevron-down chevron"></i>
+    </a>
+    <div class="collapse submenu" id="menu-settings">
+      <a class="nav-link" href="/pages/client/settings-wedding.html">Wedding Information</a>
+      <a class="nav-link" href="/pages/client/settings-profile.html">Couple Profile</a>
+      <a class="nav-link" href="/pages/client/settings-notification.html">Notification</a>
+      <a class="nav-link" href="/pages/client/settings-members.html">Members</a>
+      <a class="nav-link" href="/pages/client/settings-account.html">Account</a>
+    </div>
+    <a class="nav-link single logout-link mt-2" href="login.html">
+      <i class="bi bi-box-arrow-right menu-icon"></i> Logout
+    </a>
+  </div>
+</aside>
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<div class="main-wrap">
+
+  <div class="topbar">
+    <div class="sidebar-toggle icon-btn" onclick="toggleSidebar()"><i class="bi bi-list fs-5"></i></div>
+    <div class="search-box">
+      <i class="bi bi-search" style="color:#a8a192;"></i>
+      <input type="text" placeholder="Cari sesuatu...">
+    </div>
+    <div class="ms-auto d-flex align-items-center gap-2">
+      <div class="icon-btn"><i class="bi bi-bell"></i><span class="dot"></span></div>
+      <div class="icon-btn"><i class="bi bi-envelope"></i></div>
+      <div class="dropdown">
+        <div class="d-flex align-items-center gap-2" style="cursor:pointer;" data-bs-toggle="dropdown">
+          <div class="avatar">DB</div>
+          <div class="d-none d-md-block">
+            <div style="font-size:.85rem; font-weight:500;">Dinda &amp; Bagas</div>
+            <div style="font-size:.72rem; opacity:.6;">Paket Signature</div>
+          </div>
+          <i class="bi bi-chevron-down" style="font-size:.7rem; opacity:.6;"></i>
+        </div>
+        <ul class="dropdown-menu dropdown-menu-end mt-2">
+          <li><a class="dropdown-item" href="settings-profile.html">Profil Pasangan</a></li>
+          <li><a class="dropdown-item" href="settings-account.html">Pengaturan Akun</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="login.html">Keluar</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="content" id="content">
+
+    <div class="page-header-row">
+      <div>
+        <span class="breadcrumb-eyebrow">Budget</span>
+        <h1 class="page-title">Payments</h1>
+      </div>
+      <button class="btn-gold-solid" type="button" data-bs-toggle="modal" data-bs-target="#addPaymentModal">
+        <i class="bi bi-plus-lg me-1"></i>Tambah Jadwal
+      </button>
+    </div>
+
+    <div class="row g-3 mb-4">
+      <div class="col-6 col-lg-3">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#EAE6F2; color:#5E4E8C;"><i class="bi bi-journal-text"></i></div>
+          <div class="stat-num">Rp 167jt</div>
+          <div class="stat-label">Total kewajiban</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#E7EDE3; color:#4C6B3E;"><i class="bi bi-check2-circle"></i></div>
+          <div class="stat-num">Rp 116jt</div>
+          <div class="stat-label">Sudah dibayar</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#F6ECD9; color:#96712E;"><i class="bi bi-hourglass-split"></i></div>
+          <div class="stat-num">Rp 51jt</div>
+          <div class="stat-label">Belum dibayar</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#F5E3E0; color:#A8493D;"><i class="bi bi-alarm"></i></div>
+          <div class="stat-num">20 Jan</div>
+          <div class="stat-label">Jatuh tempo terdekat</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="payment-filter">
+      <button class="active" onclick="filterPayments(this,'all')">Semua</button>
+      <button onclick="filterPayments(this,'lunas')">Lunas</button>
+      <button onclick="filterPayments(this,'menunggu')">Menunggu</button>
+      <button onclick="filterPayments(this,'jatuh-tempo')">Jatuh Tempo</button>
+    </div>
+
+    <div class="card-plain">
+      <div id="paymentList">
+
+        <div class="payment-item" data-status="lunas">
+          <div class="payment-icon"><i class="bi bi-building"></i></div>
+          <div class="payment-body">
+            <div class="payment-title">The Garden Estate — DP Venue</div>
+            <div class="payment-meta">Tahap 1 dari 2 · Dibayar 05 Jun 2025</div>
+          </div>
+          <div class="payment-amount">Rp 22.500.000</div>
+          <div class="payment-side"><span class="badge-soft badge-green">Lunas</span></div>
+        </div>
+
+        <div class="payment-item" data-status="lunas">
+          <div class="payment-icon"><i class="bi bi-building"></i></div>
+          <div class="payment-body">
+            <div class="payment-title">The Garden Estate — Pelunasan Venue</div>
+            <div class="payment-meta">Tahap 2 dari 2 · Dibayar 15 Des 2025</div>
+          </div>
+          <div class="payment-amount">Rp 22.500.000</div>
+          <div class="payment-side"><span class="badge-soft badge-green">Lunas</span></div>
+        </div>
+
+        <div class="payment-item" data-status="lunas">
+          <div class="payment-icon"><i class="bi bi-cup-hot"></i></div>
+          <div class="payment-body">
+            <div class="payment-title">Rasa Nusantara — DP Katering</div>
+            <div class="payment-meta">Tahap 1 dari 3 · Dibayar 05 Jun 2025</div>
+          </div>
+          <div class="payment-amount">Rp 15.000.000</div>
+          <div class="payment-side"><span class="badge-soft badge-green">Lunas</span></div>
+        </div>
+
+        <div class="payment-item" data-status="lunas">
+          <div class="payment-icon"><i class="bi bi-cup-hot"></i></div>
+          <div class="payment-body">
+            <div class="payment-title">Rasa Nusantara — Pelunasan Tahap 2</div>
+            <div class="payment-meta">Tahap 2 dari 3 · Dibayar 20 Des 2025</div>
+          </div>
+          <div class="payment-amount">Rp 15.000.000</div>
+          <div class="payment-side"><span class="badge-soft badge-green">Lunas</span></div>
+        </div>
+
+        <div class="payment-item" data-status="menunggu">
+          <div class="payment-icon" style="background:#F6ECD9; color:#96712E;"><i class="bi bi-cup-hot"></i></div>
+          <div class="payment-body">
+            <div class="payment-title">Rasa Nusantara — Pelunasan Akhir</div>
+            <div class="payment-meta">Tahap 3 dari 3 · Jatuh tempo 10 Feb 2026</div>
+          </div>
+          <div class="payment-amount">Rp 10.000.000</div>
+          <div class="payment-side">
+            <span class="badge-soft badge-amber">Menunggu</span>
+            <button class="btn-pay-now d-block">Bayar Sekarang</button>
+          </div>
+        </div>
+
+        <div class="payment-item" data-status="lunas">
+          <div class="payment-icon"><i class="bi bi-flower2"></i></div>
+          <div class="payment-body">
+            <div class="payment-title">Bloom Studio — DP Dekorasi</div>
+            <div class="payment-meta">Tahap 1 dari 2 · Dibayar 10 Jun 2025</div>
+          </div>
+          <div class="payment-amount">Rp 16.000.000</div>
+          <div class="payment-side"><span class="badge-soft badge-green">Lunas</span></div>
+        </div>
+
+        <div class="payment-item" data-status="menunggu">
+          <div class="payment-icon" style="background:#F6ECD9; color:#96712E;"><i class="bi bi-flower2"></i></div>
+          <div class="payment-body">
+            <div class="payment-title">Bloom Studio — Pelunasan Dekorasi</div>
+            <div class="payment-meta">Tahap 2 dari 2 · Jatuh tempo 10 Feb 2026</div>
+          </div>
+          <div class="payment-amount">Rp 16.000.000</div>
+          <div class="payment-side">
+            <span class="badge-soft badge-amber">Menunggu</span>
+            <button class="btn-pay-now d-block">Bayar Sekarang</button>
+          </div>
+        </div>
+
+        <div class="payment-item" data-status="lunas">
+          <div class="payment-icon"><i class="bi bi-camera"></i></div>
+          <div class="payment-body">
+            <div class="payment-title">Fotografer — DP</div>
+            <div class="payment-meta">Tahap 1 dari 3 · Dibayar 01 Nov 2025</div>
+          </div>
+          <div class="payment-amount">Rp 8.000.000</div>
+          <div class="payment-side"><span class="badge-soft badge-green">Lunas</span></div>
+        </div>
+
+        <div class="payment-item" data-status="lunas">
+          <div class="payment-icon"><i class="bi bi-camera"></i></div>
+          <div class="payment-body">
+            <div class="payment-title">Fotografer — Pelunasan Prewedding</div>
+            <div class="payment-meta">Tahap 2 dari 3 · Dibayar 10 Des 2025</div>
+          </div>
+          <div class="payment-amount">Rp 7.000.000</div>
+          <div class="payment-side"><span class="badge-soft badge-green">Lunas</span></div>
+        </div>
+
+        <div class="payment-item" data-status="menunggu">
+          <div class="payment-icon" style="background:#F6ECD9; color:#96712E;"><i class="bi bi-camera"></i></div>
+          <div class="payment-body">
+            <div class="payment-title">Fotografer — Pelunasan Hari-H</div>
+            <div class="payment-meta">Tahap 3 dari 3 · Jatuh tempo 01 Mar 2026</div>
+          </div>
+          <div class="payment-amount">Rp 10.000.000</div>
+          <div class="payment-side">
+            <span class="badge-soft badge-amber">Menunggu</span>
+            <button class="btn-pay-now d-block">Bayar Sekarang</button>
+          </div>
+        </div>
+
+        <div class="payment-item" data-status="lunas">
+          <div class="payment-icon"><i class="bi bi-brush"></i></div>
+          <div class="payment-body">
+            <div class="payment-title">Kirana Makeup — DP</div>
+            <div class="payment-meta">Tahap 1 dari 2 · Dibayar 15 Sep 2025</div>
+          </div>
+          <div class="payment-amount">Rp 5.000.000</div>
+          <div class="payment-side"><span class="badge-soft badge-green">Lunas</span></div>
+        </div>
+
+        <div class="payment-item" data-status="jatuh-tempo">
+          <div class="payment-icon" style="background:#F5E3E0; color:#A8493D;"><i class="bi bi-brush"></i></div>
+          <div class="payment-body">
+            <div class="payment-title">Kirana Makeup — Sisa Pembayaran</div>
+            <div class="payment-meta" style="color:#A8493D;">Tahap 2 dari 2 · Jatuh tempo 20 Jan 2026 — segera bayar</div>
+          </div>
+          <div class="payment-amount">Rp 5.000.000</div>
+          <div class="payment-side">
+            <span class="badge-soft badge-red">Jatuh Tempo</span>
+            <button class="btn-pay-now d-block">Bayar Sekarang</button>
+          </div>
+        </div>
+
+        <div class="payment-item" data-status="lunas">
+          <div class="payment-icon"><i class="bi bi-music-note-beamed"></i></div>
+          <div class="payment-body">
+            <div class="payment-title">Band Live Music — DP</div>
+            <div class="payment-meta">Tahap 1 dari 2 · Dibayar 10 Jan 2026</div>
+          </div>
+          <div class="payment-amount">Rp 5.000.000</div>
+          <div class="payment-side"><span class="badge-soft badge-green">Lunas</span></div>
+        </div>
+
+        <div class="payment-item" data-status="menunggu">
+          <div class="payment-icon" style="background:#F6ECD9; color:#96712E;"><i class="bi bi-music-note-beamed"></i></div>
+          <div class="payment-body">
+            <div class="payment-title">Band Live Music — Pelunasan</div>
+            <div class="payment-meta">Tahap 2 dari 2 · Jatuh tempo 01 Mar 2026</div>
+          </div>
+          <div class="payment-amount">Rp 10.000.000</div>
+          <div class="payment-side">
+            <span class="badge-soft badge-amber">Menunggu</span>
+            <button class="btn-pay-now d-block">Bayar Sekarang</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal fade" id="addPaymentModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:12px; border:none;">
+      <div class="modal-header" style="border-bottom:1px solid rgba(0,0,0,.06);">
+        <h5 class="modal-title" style="font-family:'Cormorant Garamond',serif; color:var(--sage-dark);">Tambah Jadwal Pembayaran</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="return false;">
+          <div class="mb-3">
+            <label class="form-label" style="font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; color:var(--sage-dark);">Nama Vendor</label>
+            <input type="text" class="form-control" placeholder="Contoh: Kirana Makeup">
+          </div>
+          <div class="mb-3">
+            <label class="form-label" style="font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; color:var(--sage-dark);">Deskripsi Tahap</label>
+            <input type="text" class="form-control" placeholder="Contoh: Pelunasan Tahap 2 dari 2">
+          </div>
+          <div class="row g-3 mb-2">
+            <div class="col-md-6">
+              <label class="form-label" style="font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; color:var(--sage-dark);">Jumlah</label>
+              <input type="text" class="form-control" placeholder="Rp 0">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" style="font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; color:var(--sage-dark);">Jatuh Tempo</label>
+              <input type="date" class="form-control">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer" style="border-top:1px solid rgba(0,0,0,.06);">
+        <button type="button" class="btn-gold-outline" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn-gold-solid" data-bs-dismiss="modal">Simpan Jadwal</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/js/client.js"></script>
+</body>
+</html>

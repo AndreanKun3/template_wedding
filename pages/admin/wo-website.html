@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Saya — Selaras WO Admin</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/admin.css">
+
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+      <circle cx="60" cy="60" r="42" fill="none" stroke="#5C6B54" stroke-width="1.4"/>
+      <circle cx="60" cy="60" r="37.5" fill="none" stroke="#B08D4F" stroke-width="1"/>
+      <g fill="none" stroke="#5C6B54" stroke-width="1.6" stroke-linecap="round">
+        <path d="M26,72 C19,64 19,50 26,40"/>
+        <path d="M94,72 C101,64 101,50 94,40"/>
+      </g>
+      <text x="60" y="72" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-weight="600" font-size="38" fill="#3E4A38">S</text>
+    </svg>
+    <div class="brand-text">
+      <div class="name">Selaras WO</div>
+      <div class="tag">Admin Panel</div>
+    </div>
+  </div>
+
+  <div class="sidebar-nav">
+    <a class="nav-link" href="/wo-dashboard.html"><i class="bi bi-speedometer2 menu-icon"></i>Dashboard</a>
+    <a class="nav-link" href="/pages/admin/wo-clients.html"><i class="bi bi-people menu-icon"></i>Clients</a>
+    <a class="nav-link" href="/pages/admin/wo-team.html"><i class="bi bi-person-badge menu-icon"></i>Team</a>
+    <a class="nav-link" href="/pages/admin/wo-calendar.html"><i class="bi bi-calendar3 menu-icon"></i>Calendar</a>
+
+    <div class="nav-group-title">Bisnis</div>
+    <a class="nav-link active" href="/pages/admin/  wo-website.html"><i class="bi bi-globe2 menu-icon"></i>Website Saya</a>
+    <!-- <a class="nav-link" href="/pages/admin/wo-billing.html"><i class="bi bi-credit-card menu-icon"></i>Billing</a> -->
+    <a class="nav-link" href="/pages/admin/wo-settings.html"><i class="bi bi-gear menu-icon"></i>Settings</a>
+
+    <a class="nav-link logout-link mt-3" href="/login.html"><i class="bi bi-box-arrow-right menu-icon"></i>Logout</a>
+  </div>
+</aside>
+
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<div class="main-wrap">
+  <div class="topbar">
+    <div class="sidebar-toggle icon-btn" onclick="toggleSidebar()"><i class="bi bi-list fs-5"></i></div>
+    <div class="search-box"><i class="bi bi-search" style="color:#a8a192;"></i><input type="text" placeholder="Cari sesuatu..."></div>
+    <div class="ms-auto d-flex align-items-center gap-2">
+      <div class="icon-btn"><i class="bi bi-bell"></i><span class="dot"></span></div>
+      <div class="dropdown">
+        <div class="d-flex align-items-center gap-2" style="cursor:pointer;" data-bs-toggle="dropdown">
+          <div class="avatar">S</div>
+          <div class="d-none d-md-block">
+            <div style="font-size:.85rem; font-weight:500;">Sari Wijayanti</div>
+            <div style="font-size:.72rem; opacity:.6;">Owner — Selaras WO</div>
+          </div>
+          <i class="bi bi-chevron-down" style="font-size:.7rem; opacity:.6;"></i>
+        </div>
+        <ul class="dropdown-menu dropdown-menu-end mt-2">
+          <li><a class="dropdown-item" href="wo-settings.html">Pengaturan Akun</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="login.html">Keluar</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="page-header-row">
+      <div>
+        <span class="breadcrumb-eyebrow">Selaras WO</span>
+        <h1 class="page-title">Website Saya</h1>
+      </div>
+      <div class="d-flex gap-2">
+        <button class="btn-gold-outline" type="button"><i class="bi bi-box-arrow-up-right me-1"></i>Lihat Live</button>
+        <button class="btn-gold-solid" type="button" onclick="showPublished()"><i class="bi bi-cloud-upload me-1"></i>Publikasikan</button>
+      </div>
+    </div>
+
+    <div class="url-bar">
+      <i class="bi bi-link-45deg"></i>
+      <span class="url-text" id="urlPreviewText">selaras-app.id/w/selaras-wedding</span>
+      <span class="badge-soft badge-green">Live</span>
+      <span class="row-action" title="Salin Link"><i class="bi bi-copy"></i></span>
+    </div>
+
+    <div class="builder-layout">
+
+      <!-- ===== EDITOR PANEL ===== -->
+      <div class="builder-panel">
+        <div class="accordion" id="builderAccordion">
+
+          <!-- Identitas -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accIdentitas">
+                <i class="bi bi-signpost-2"></i>Identitas &amp; URL
+              </button>
+            </h2>
+            <div id="accIdentitas" class="accordion-collapse collapse show">
+              <div class="accordion-body builder-body">
+                <div class="mb-3">
+                  <label class="builder-label">Nama Bisnis</label>
+                  <input type="text" class="form-control" id="inBusinessName" value="Selaras Wedding Planner" oninput="syncPreview()">
+                </div>
+                <div class="mb-3">
+                  <label class="builder-label">Slug URL</label>
+                  <input type="text" class="form-control" id="inSlug" value="selaras-wedding" oninput="syncPreview()">
+                </div>
+                <div>
+                  <label class="builder-label">Favicon / Inisial Logo</label>
+                  <input type="text" class="form-control" id="inInitial" maxlength="2" value="S" oninput="syncPreview()">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Warna & Tema -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accWarna">
+                <i class="bi bi-palette"></i>Warna &amp; Tema
+              </button>
+            </h2>
+            <div id="accWarna" class="accordion-collapse collapse">
+              <div class="accordion-body builder-body">
+                <div class="row g-3">
+                  <div class="col-6">
+                    <label class="builder-label">Warna Utama</label>
+                    <div class="color-input-row">
+                      <input type="color" id="inPrimary" value="#3E4A38" oninput="syncPreview()">
+                      <input type="text" class="form-control" id="inPrimaryHex" value="#3E4A38" oninput="syncFromHex('inPrimary','inPrimaryHex')">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <label class="builder-label">Warna Aksen</label>
+                    <div class="color-input-row">
+                      <input type="color" id="inAccent" value="#B08D4F" oninput="syncPreview()">
+                      <input type="text" class="form-control" id="inAccentHex" value="#B08D4F" oninput="syncFromHex('inAccent','inAccentHex')">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <label class="builder-label">Warna Latar</label>
+                    <div class="color-input-row">
+                      <input type="color" id="inBg" value="#FAF6EF" oninput="syncPreview()">
+                      <input type="text" class="form-control" id="inBgHex" value="#FAF6EF" oninput="syncFromHex('inBg','inBgHex')">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <label class="builder-label">Gaya Font</label>
+                    <select class="form-select" id="inFontStyle" onchange="syncPreview()">
+                      <option value="serif">Elegan (Serif)</option>
+                      <option value="sans">Modern (Sans)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Content -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accHero">
+                <i class="bi bi-type"></i>Judul &amp; Isi Utama
+              </button>
+            </h2>
+            <div id="accHero" class="accordion-collapse collapse">
+              <div class="accordion-body builder-body">
+                <div class="mb-3">
+                  <label class="builder-label">Eyebrow / Label Kecil</label>
+                  <input type="text" class="form-control" id="inEyebrow" value="Wedding Planner & Kurator Acara" oninput="syncPreview()">
+                </div>
+                <div class="mb-3">
+                  <label class="builder-label">Headline Utama</label>
+                  <textarea class="form-control" id="inHeadline" rows="2" oninput="syncPreview()">Setiap Kisah Layak Dirayakan dengan Selaras</textarea>
+                </div>
+                <div class="mb-3">
+                  <label class="builder-label">Subheadline</label>
+                  <textarea class="form-control" id="inSubheadline" rows="3" oninput="syncPreview()">Kami merangkai detail, vendor, dan waktu menjadi satu hari yang mengalir tanpa hambatan.</textarea>
+                </div>
+                <div>
+                  <label class="builder-label">Teks Tombol CTA</label>
+                  <input type="text" class="form-control" id="inCtaText" value="Konsultasi Gratis" oninput="syncPreview()">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tentang Kami -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accAbout">
+                <i class="bi bi-card-text"></i>Tentang Kami
+              </button>
+            </h2>
+            <div id="accAbout" class="accordion-collapse collapse">
+              <div class="accordion-body builder-body">
+                <div class="mb-3">
+                  <label class="builder-label">Judul Bagian</label>
+                  <input type="text" class="form-control" id="inAboutTitle" value="Mitra di Balik Layar, Saksi di Hari Bahagia" oninput="syncPreview()">
+                </div>
+                <div>
+                  <label class="builder-label">Deskripsi</label>
+                  <textarea class="form-control" id="inAboutText" rows="4" oninput="syncPreview()">Sejak 2016, kami mendampingi pasangan merancang pernikahan yang terasa personal — bukan sekadar seragam dan dekorasi, tapi cerita yang utuh.</textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paket Harga -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accPaket">
+                <i class="bi bi-tags"></i>Paket Harga
+              </button>
+            </h2>
+            <div id="accPaket" class="accordion-collapse collapse">
+              <div class="accordion-body builder-body">
+                <div id="pkgEditorList"></div>
+                <button class="btn-gold-outline w-100 mt-2" type="button" onclick="addPackage()">
+                  <i class="bi bi-plus-lg me-1"></i>Tambah Paket
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kontak -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accKontak">
+                <i class="bi bi-whatsapp"></i>Kontak
+              </button>
+            </h2>
+            <div id="accKontak" class="accordion-collapse collapse">
+              <div class="accordion-body builder-body">
+                <div class="mb-3">
+                  <label class="builder-label">No. WhatsApp</label>
+                  <input type="text" class="form-control" id="inWhatsapp" value="0857-1234-5678" oninput="syncPreview()">
+                </div>
+                <div>
+                  <label class="builder-label">Instagram</label>
+                  <input type="text" class="form-control" id="inInstagram" value="@selarasweddings" oninput="syncPreview()">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===== LIVE PREVIEW ===== -->
+      <div class="builder-preview-wrap">
+        <div class="browser-frame">
+          <div class="browser-topbar">
+            <span class="browser-dot" style="background:#e0645c;"></span>
+            <span class="browser-dot" style="background:#f0b95e;"></span>
+            <span class="browser-dot" style="background:#5cb45e;"></span>
+            <div class="browser-url-pill" id="browserUrlPill">selaras-app.id/w/selaras-wedding</div>
+          </div>
+          <div class="preview-scroll" id="previewRoot">
+            <div class="prev-hero" id="prevHero">
+              <div class="prev-eyebrow" id="prevEyebrow"></div>
+              <div class="prev-headline" id="prevHeadline"></div>
+              <div class="prev-sub" id="prevSub"></div>
+              <a href="#" class="prev-cta" id="prevCta" onclick="return false;"></a>
+            </div>
+
+            <div class="prev-section" style="background:#fff;">
+              <div class="prev-section-title" id="prevAboutTitle"></div>
+              <p class="prev-about-text" id="prevAboutText"></p>
+            </div>
+
+            <div class="prev-section" id="prevPkgSection">
+              <div class="prev-section-title" id="prevPkgTitle">Paket Layanan</div>
+              <div class="prev-pkg-row" id="prevPkgRow"></div>
+            </div>
+
+            <div class="prev-footer">
+              <span id="prevFooterName"></span> &middot; WA: <span id="prevFooterWa"></span> &middot; IG: <span id="prevFooterIg"></span>
+            </div>
+          </div>
+        </div>
+        <p class="text-center text-muted mt-2" style="font-size:.78rem;">Pratinjau langsung — perubahan di panel kiri langsung terlihat di sini.</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-4" style="z-index:1100;">
+  <div id="publishedToast" class="toast align-items-center" role="alert">
+    <div class="d-flex">
+      <div class="toast-body" style="font-size:.87rem; color:var(--sage-dark); background:#fff; border-radius:8px;">
+        <i class="bi bi-check-circle-fill me-2" style="color:#4C6B3E;"></i>Website berhasil dipublikasikan.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/js/admin.js"></script>
+</body>
+</html>

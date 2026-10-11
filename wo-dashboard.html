@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — Selaras WO Admin</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/admin.css" />
+  </head>
+  <body>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle
+            cx="60"
+            cy="60"
+            r="42"
+            fill="none"
+            stroke="#5C6B54"
+            stroke-width="1.4"
+          />
+          <circle
+            cx="60"
+            cy="60"
+            r="37.5"
+            fill="none"
+            stroke="#B08D4F"
+            stroke-width="1"
+          />
+          <g
+            fill="none"
+            stroke="#5C6B54"
+            stroke-width="1.6"
+            stroke-linecap="round"
+          >
+            <path d="M26,72 C19,64 19,50 26,40" />
+            <path d="M94,72 C101,64 101,50 94,40" />
+          </g>
+          <text
+            x="60"
+            y="72"
+            text-anchor="middle"
+            font-family="Cormorant Garamond, serif"
+            font-style="italic"
+            font-weight="600"
+            font-size="38"
+            fill="#3E4A38"
+          >
+            S
+          </text>
+        </svg>
+        <div class="brand-text">
+          <div class="name">Selaras WO</div>
+          <div class="tag">Admin Panel</div>
+        </div>
+      </div>
+
+      <div class="sidebar-nav">
+        <a class="nav-link active" href="wo-dashboard.html"
+          ><i class="bi bi-speedometer2 menu-icon"></i>Dashboard</a
+        >
+        <a class="nav-link" href="/pages/admin/wo-clients.html"
+          ><i class="bi bi-people menu-icon"></i>Clients</a
+        >
+        <a class="nav-link" href="/pages/admin/wo-team.html"
+          ><i class="bi bi-person-badge menu-icon"></i>Team</a
+        >
+        <a class="nav-link" href="/pages/admin/wo-calendar.html"
+          ><i class="bi bi-calendar3 menu-icon"></i>Calendar</a
+        >
+
+        <div class="nav-group-title">Bisnis</div>
+        <a class="nav-link" href="/pages/admin/wo-website.html"
+          ><i class="bi bi-globe2 menu-icon"></i>Website Saya</a
+        >
+        <a class="nav-link" href="/pages/admin/wo-billing.html"
+          ><i class="bi bi-credit-card menu-icon"></i>Billing</a
+        >
+        <a class="nav-link" href="/pages/admin/wo-settings.html"
+          ><i class="bi bi-gear menu-icon"></i>Settings</a
+        >
+
+        <a class="nav-link logout-link mt-3" href="login.html"
+          ><i class="bi bi-box-arrow-right menu-icon"></i>Logout</a
+        >
+      </div>
+    </aside>
+
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <div class="main-wrap">
+      <div class="topbar">
+        <div class="sidebar-toggle icon-btn" onclick="toggleSidebar()">
+          <i class="bi bi-list fs-5"></i>
+        </div>
+        <div class="search-box">
+          <i class="bi bi-search" style="color: #a8a192"></i
+          ><input type="text" placeholder="Cari sesuatu..." />
+        </div>
+        <div class="ms-auto d-flex align-items-center gap-2">
+          <div class="icon-btn">
+            <i class="bi bi-bell"></i><span class="dot"></span>
+          </div>
+          <div class="dropdown">
+            <div
+              class="d-flex align-items-center gap-2"
+              style="cursor: pointer"
+              data-bs-toggle="dropdown"
+            >
+              <div class="avatar">S</div>
+              <div class="d-none d-md-block">
+                <div style="font-size: 0.85rem; font-weight: 500">
+                  Sari Wijayanti
+                </div>
+                <div style="font-size: 0.72rem; opacity: 0.6">
+                  Owner — Selaras WO
+                </div>
+              </div>
+              <i
+                class="bi bi-chevron-down"
+                style="font-size: 0.7rem; opacity: 0.6"
+              ></i>
+            </div>
+            <ul class="dropdown-menu dropdown-menu-end mt-2">
+              <li>
+                <a class="dropdown-item" href="wo-settings.html"
+                  >Pengaturan Akun</a
+                >
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item text-danger" href="login.html"
+                  >Keluar</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="page-header-row">
+          <div>
+            <span class="breadcrumb-eyebrow">Selaras WO</span>
+            <h1 class="page-title">Selamat Datang, Sari</h1>
+          </div>
+          <a
+            href="wo-clients.html"
+            class="btn-gold-solid"
+            style="text-decoration: none"
+          >
+            <i class="bi bi-people me-1"></i>Lihat Semua Klien
+          </a>
+        </div>
+
+        <div class="row g-3 mb-4">
+          <div class="col-6 col-lg-3">
+            <div class="stat-card">
+              <div
+                class="stat-icon"
+                style="background: #f6ecd9; color: #96712e"
+              >
+                <i class="bi bi-cash-stack"></i>
+              </div>
+              <div class="stat-num">Rp 250jt</div>
+              <div class="stat-label">Total nilai kontrak aktif</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="stat-card">
+              <div
+                class="stat-icon"
+                style="background: #e7ede3; color: #4c6b3e"
+              >
+                <i class="bi bi-people"></i>
+              </div>
+              <div class="stat-num">4</div>
+              <div class="stat-label">Klien aktif</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="stat-card">
+              <div
+                class="stat-icon"
+                style="background: #eae6f2; color: #5e4e8c"
+              >
+                <i class="bi bi-calendar-event"></i>
+              </div>
+              <div class="stat-num">6</div>
+              <div class="stat-label">Acara 6 bulan ke depan</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="stat-card">
+              <div
+                class="stat-icon"
+                style="background: #f5e3e0; color: #a8493d"
+              >
+                <i class="bi bi-person-badge"></i>
+              </div>
+              <div class="stat-num">2</div>
+              <div class="stat-label">Staff aktif</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-lg-7">
+            <div class="card-plain h-100">
+              <div class="card-section-title">
+                <i class="bi bi-bar-chart-line"></i>Omzet 6 Bulan Terakhir
+              </div>
+              <div class="month-chart">
+                <div class="month-bar-col">
+                  <div class="month-bar-val">35jt</div>
+                  <div class="month-bar" style="height: 54%"></div>
+                  <div class="month-bar-label">Jul</div>
+                </div>
+                <div class="month-bar-col">
+                  <div class="month-bar-val">15jt</div>
+                  <div class="month-bar" style="height: 23%"></div>
+                  <div class="month-bar-label">Ags</div>
+                </div>
+                <div class="month-bar-col">
+                  <div class="month-bar-val">20jt</div>
+                  <div class="month-bar" style="height: 31%"></div>
+                  <div class="month-bar-label">Sep</div>
+                </div>
+                <div class="month-bar-col">
+                  <div class="month-bar-val">65jt</div>
+                  <div class="month-bar peak" style="height: 100%"></div>
+                  <div class="month-bar-label">Okt</div>
+                </div>
+                <div class="month-bar-col">
+                  <div class="month-bar-val">35jt</div>
+                  <div class="month-bar" style="height: 54%"></div>
+                  <div class="month-bar-label">Nov</div>
+                </div>
+                <div class="month-bar-col">
+                  <div class="month-bar-val">45jt</div>
+                  <div class="month-bar peak" style="height: 69%"></div>
+                  <div class="month-bar-label">Des</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="card-plain h-100">
+              <div class="card-section-title">
+                <i class="bi bi-calendar-heart"></i>Acara Mendatang
+              </div>
+
+              <div class="upcoming-item">
+                <div
+                  class="upcoming-date-box"
+                  style="background: #f5e3e0; color: #a8493d"
+                >
+                  <span class="d">10</span><span class="m">Jan</span>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="fw-medium" style="font-size: 0.86rem">
+                    Vina &amp; Reza
+                  </div>
+                  <div class="text-muted" style="font-size: 0.76rem">
+                    Aryaduta Hotel · Staff: Dewi
+                  </div>
+                </div>
+              </div>
+
+              <div class="upcoming-item">
+                <div class="upcoming-date-box">
+                  <span class="d">05</span><span class="m">Feb</span>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="fw-medium" style="font-size: 0.86rem">
+                    Lala &amp; Iqbal
+                  </div>
+                  <div class="text-muted" style="font-size: 0.76rem">
+                    Villa Kemuning · Staff: Dewi
+                  </div>
+                </div>
+              </div>
+
+              <div class="upcoming-item">
+                <div class="upcoming-date-box">
+                  <span class="d">14</span><span class="m">Mar</span>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="fw-medium" style="font-size: 0.86rem">
+                    Dinda &amp; Bagas
+                  </div>
+                  <div class="text-muted" style="font-size: 0.76rem">
+                    The Garden Estate · Staff: Sari
+                  </div>
+                </div>
+              </div>
+
+              <div class="upcoming-item">
+                <div class="upcoming-date-box">
+                  <span class="d">20</span><span class="m">Apr</span>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="fw-medium" style="font-size: 0.86rem">
+                    Rina &amp; Fajar
+                  </div>
+                  <div class="text-muted" style="font-size: 0.76rem">
+                    Ballroom Hotel Mulia · Staff: Sari
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-lg-5">
+            <div class="card-plain h-100">
+              <div class="card-section-title">
+                <i class="bi bi-person-badge"></i>Beban Kerja Staff
+              </div>
+
+              <div class="staff-item">
+                <div class="staff-avatar">S</div>
+                <div class="flex-grow-1">
+                  <div class="fw-medium" style="font-size: 0.87rem">
+                    Sari Wijayanti
+                  </div>
+                  <div class="text-muted" style="font-size: 0.76rem">
+                    2 klien aktif
+                  </div>
+                </div>
+                <span class="badge-soft badge-green">Owner</span>
+              </div>
+
+              <div class="staff-item">
+                <div
+                  class="staff-avatar"
+                  style="background: var(--sage-dark); color: #fff"
+                >
+                  D
+                </div>
+                <div class="flex-grow-1">
+                  <div class="fw-medium" style="font-size: 0.87rem">
+                    Dewi Lestari
+                  </div>
+                  <div class="text-muted" style="font-size: 0.76rem">
+                    2 klien aktif
+                  </div>
+                </div>
+                <span class="badge-soft badge-amber">Koordinator</span>
+              </div>
+
+              <div class="staff-item">
+                <div class="flex-grow-1">
+                  <div
+                    class="fw-medium"
+                    style="font-size: 0.87rem; color: #a8493d"
+                  >
+                    Putri &amp; Aldo
+                  </div>
+                  <div class="text-muted" style="font-size: 0.76rem">
+                    Belum ditugaskan ke staff
+                  </div>
+                </div>
+                <a href="wo-clients.html" class="row-action" title="Tugaskan"
+                  ><i class="bi bi-person-plus"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="card-plain h-100">
+              <div class="card-section-title">
+                <i class="bi bi-activity"></i>Aktivitas Terbaru
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div style="font-size: 0.87rem">
+                  Klien baru <strong>Putri &amp; Aldo</strong> ditambahkan
+                  dengan paket Grand
+                  <span class="text-muted">— 2 hari lalu</span>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div style="font-size: 0.87rem">
+                  <strong>Vina &amp; Reza</strong> menyelesaikan pembayaran DP
+                  fotografer <span class="text-muted">— 3 hari lalu</span>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div style="font-size: 0.87rem">
+                  Dewi ditugaskan sebagai koordinator untuk
+                  <strong>Lala &amp; Iqbal</strong>
+                  <span class="text-muted">— 5 hari lalu</span>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div style="font-size: 0.87rem">
+                  Website landing page berhasil dipublikasikan
+                  <span class="text-muted">— 6 hari lalu</span>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div style="font-size: 0.87rem">
+                  <strong>Citra &amp; Doni</strong> acara selesai, status
+                  diarsipkan <span class="text-muted">— 1 bulan lalu</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/admin.js"></script>
+  </body>
+</html>
