@@ -158,3 +158,25 @@ function showSaved() {
   const toast = new bootstrap.Toast(toastEl, { delay: 2500 });
   toast.show();
 }
+
+function filterPhotos(btn, cat) {
+  document
+    .querySelectorAll(".gallery-filter button")
+    .forEach((b) => b.classList.remove("active"));
+  btn.classList.add("active");
+  document.querySelectorAll("#photoGrid > div").forEach((tile) => {
+    tile.style.display =
+      cat === "all" || tile.dataset.cat === cat ? "" : "none";
+  });
+}
+
+function filterVideos(btn, cat) {
+  document
+    .querySelectorAll(".gallery-filter button")
+    .forEach((b) => b.classList.remove("active"));
+  btn.classList.add("active");
+  document.querySelectorAll("#videoGrid > div").forEach((tile) => {
+    tile.style.display =
+      cat === "all" || tile.dataset.cat === cat ? "" : "none";
+  });
+}
